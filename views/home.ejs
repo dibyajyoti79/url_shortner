@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>URL Shortner</h2>
+      <form method="POST" action="/url">
+        <div class="user-box">
+          <input type="text" name="url" required="" />
+          <label>Enter your Original URL</label>
+        </div>
+        <div class="user-box">
+          <% if(locals.id){ %>
+          <p style="color: white">Short URL:</p>
+          <a
+            style="color: rgb(79, 250, 227)"
+            target="_blank"
+            href="http://localhost:8001/url/<%= id%>"
+            >http://localhost:8001/url/<%= id%></a
+          >
+
+          <% } %>
+        </div>
+        <button type="submit">Generate</button>
+      </form>
+    </div>
+  </body>
+</html>
